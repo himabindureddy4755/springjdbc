@@ -20,7 +20,8 @@ public class PlayJdbc {
 		//studentDao.insert(anotherStudent);
 		studentDao.insert(myStudent);
 		
-		studentDao.delRecordByNameSem("himani", 8);
+		//studentDao.delRecordByNameSem("himani", 8);
+		studentDao.cleanUp();
 		
 		
 	}
