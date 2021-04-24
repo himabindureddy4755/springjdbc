@@ -20,6 +20,7 @@ public class EmployeeMain {
 			employeeDao.insert(employee2);
 			employeeDao.deleteby_name("himani");
 			employeeDao.deleteby_id_and_profession(425, "engineer");
+			employeeDao.truncatetable();
        
 	}
 

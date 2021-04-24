@@ -10,7 +10,7 @@ import assignment2.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao{
      
-	// private JdbcTemplate jdbcTemplate = new JdbcTemplate();
+	// private JdbcTemplate jdbcTemplate = new JdbcTemplate(Datasource();
 	private JdbcTemplate jdbcTemplate ;
 
 
@@ -61,5 +61,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		Object[] objects = {id,profession};
 		int no_ofrows_deleted = jdbcTemplate.update(delsql,objects);
 		System.out.println("no.of rows deleted "+no_ofrows_deleted);
+	}
+
+
+	@Override
+	public void truncatetable() {
+		// TODO Auto-generated method stub
+		String sqltruncate = "TRUNCATE TABLE Employee";
+		int truncate = jdbcTemplate.update(sqltruncate);
+		System.out.println("table truncation completed"+truncate);
+		
 	}
 }
