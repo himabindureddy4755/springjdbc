@@ -1,5 +1,7 @@
 package basic;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,11 +12,15 @@ import basic.model.Student;
 
 public class PlayJdbc {
 	public static void main(String[] args) {
-		//ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		StudentDaoImpl studentDao = (StudentDaoImpl) context.getBean("studentDao");
-		StudentDaoHelper helper = context.getBean("studentDaoHelper",StudentDaoHelper.class);
-		helper.insertStudents();
+		//StudentDaoHelper helper = context.getBean("studentDaoHelper",StudentDaoHelper.class);
+		//helper.insertStudents();
+		List<Student> students = studentDao.getAllStudents();
+		printStudents(students);
+		
+
 		 
 	
 		//StudentDao studentDao = (StudentDao) context.getBean("studentDao");
@@ -40,6 +46,13 @@ public class PlayJdbc {
 		
 		
 		
+	}
+
+	private static void printStudents(List<Student> students) {
+		// TODO Auto-generated method stub
+		for(Student s : students) {
+			System.out.println(s);
+		}
 	}
 
 	

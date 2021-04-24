@@ -43,6 +43,7 @@ public  class StudentDaoImpl implements StudentDao {
 	  System.out.println("no of rows deleted is:"+noRecordDeleted);
 	  }*/
 	 
+	//@Override
 	/*@Override
 		public int delRecordByNameSem(String studentName, int sem) {
 			String sql = "DELETE FROM STUDENT WHERE NAME = ? AND SEM = ?"; //replace OR with AND and see the results
@@ -83,6 +84,16 @@ public  class StudentDaoImpl implements StudentDao {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource(url,username,password);
 		return dataSource;
 	
+		
+	}
+
+
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM STUDENT";
+		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
+		return students;
 		
 	}
 
