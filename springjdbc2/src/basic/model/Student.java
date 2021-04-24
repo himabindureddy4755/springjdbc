@@ -1,5 +1,9 @@
 package basic.model;
 public class Student {
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", sem=" + sem + ", average=" + average + "]";
+	}
 	int id;
 	String name;
 	int sem;
@@ -38,6 +42,7 @@ public class Student {
 	public void setAverage(int average) {
 		this.average = average;
 	}
+	
 	
 
 
