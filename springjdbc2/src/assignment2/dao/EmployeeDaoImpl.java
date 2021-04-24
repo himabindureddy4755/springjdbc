@@ -31,6 +31,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		int no_ofrows = jdbcTemplate.update(sql, objects);
 		System.out.println("no.of rows inserted " +no_ofrows);
 }
+	
 
 	public DataSource getDataSource() {
 		String url ="jdbc:mysql://127.0.0.1:3306/employeejdbc";
@@ -40,5 +41,14 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return dataSource;
 	
 		
+	}
+
+
+	@Override
+	public void deleteby_name(String name) {
+		// TODO Auto-generated method stub
+		String del = "DELETE FROM EMPLOYEE WHERE name=?";
+		int deleterow = jdbcTemplate.update(del,name);
+	    System.out.println("no.of rows deletd are "+deleterow);
 	}
 }

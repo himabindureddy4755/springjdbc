@@ -18,6 +18,7 @@ public class EmployeeMain {
 		EmployeeDao employeeDao = (EmployeeDao) context.getBean("employeeDao");
 			employeeDao.insert(employee1);
 			employeeDao.insert(employee2);
+			employeeDao.deleteby_name("himani");
        
 	}
 
