@@ -18,6 +18,7 @@ public class PlayJdbc {
 		//StudentDao studentDao = new StudentDaoImpl();
 		//studentDao.insert(anotherStudent);
 		studentDao.insert(myStudent);
+		studentDao.delRecordByNameSem("himani", 7);
 		
 		
 	}

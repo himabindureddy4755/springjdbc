@@ -42,6 +42,15 @@ public class StudentDaoImpl implements StudentDao {
 	  int noRecordDeleted = jdbcTemplate.update(delSql,id);
 	  System.out.println("no of rows deleted is:"+noRecordDeleted);
 	  }
+	  @Override
+		public int delRecordByNameSem(String studentName, int sem) {
+			String sql = "DELETE FROM STUDENT WHERE NAME = ? OR SEM = ?"; //replace OR with AND and see the results
+			Object[] objects = {studentName,sem};
+			int noRecordsDeleted = jdbcTemplate.update(sql, objects);
+			System.out.println("no of records deleted ="+ noRecordsDeleted);
+		    return noRecordsDeleted;
+		}
+
 	 
 
 	public DataSource getDataSource() {
