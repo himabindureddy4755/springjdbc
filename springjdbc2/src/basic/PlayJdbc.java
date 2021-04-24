@@ -13,12 +13,14 @@ public class PlayJdbc {
 		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
 		Student myStudent = new Student(1, "himani", 7, 96);
 		Student anotherStudent = new Student(2,"bindu",8,88);
-		studentDao.delRecordById(2);
+		studentDao.insert(anotherStudent);
+		//studentDao.delRecordById(2);
 		
 		//StudentDao studentDao = new StudentDaoImpl();
 		//studentDao.insert(anotherStudent);
 		studentDao.insert(myStudent);
-		studentDao.delRecordByNameSem("himani", 7);
+		
+		studentDao.delRecordByNameSem("himani", 8);
 		
 		
 	}
