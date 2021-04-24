@@ -38,6 +38,7 @@ public class Student {
 	public void setAverage(int average) {
 		this.average = average;
 	}
+	
 
 
 
